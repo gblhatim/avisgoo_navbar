@@ -75,7 +75,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width / _iconList.length,
-              padding: const EdgeInsets.only(bottom: 8, top: 16),
+              padding: const EdgeInsets.only(bottom: 8, top: 8),
               child: Icon(
                 icon,
                 size: widget.sizeIcon,
@@ -87,7 +87,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
             Visibility(
               visible: widget.showLabel,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
+                padding: const EdgeInsets.symmetric(vertical: 3),
                 child: Text(
                   '$text',
                   style: TextStyle(
