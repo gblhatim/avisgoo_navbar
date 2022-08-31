@@ -75,7 +75,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width / _iconList.length,
-              padding: const EdgeInsets.only(bottom: 8, top: 8),
+              padding: const EdgeInsets.only(bottom: 6, top: 8),
               child: Icon(
                 icon,
                 size: widget.sizeIcon,
@@ -111,7 +111,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
   Widget selectedIndicator() {
     return AnimatedContainer(
       duration: Duration(milliseconds: 250),
-      //width: 40,
+      width: 40,
       height: 3,
       margin: const EdgeInsets.only(top: 4),
       decoration: BoxDecoration(
