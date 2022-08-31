@@ -75,7 +75,7 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width / _iconList.length,
-              padding: const EdgeInsets.only(bottom: 8, top: 8),
+              padding: const EdgeInsets.only(bottom: 4, top: 4),
               child: Icon(
                 icon,
                 size: widget.sizeIcon,
