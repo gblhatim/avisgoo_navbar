@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart';
+import 'package:provider/provider.dart';
+import 'package:avisgoo_v2/features/notifications/notification_provider.dart';
 
 class CustomBottomNavBarDash extends StatefulWidget {
   final int defaultSelectedIndex;
@@ -76,13 +79,29 @@ class _CustomBottomNavBarDashState extends State<CustomBottomNavBarDash> {
             Container(
               width: MediaQuery.of(context).size.width / _iconList.length,
               padding: const EdgeInsets.only(bottom: 6, top: 8),
-              child: Icon(
-                icon,
-                size: widget.sizeIcon,
-                color: _selectedIndex == index
-                    ? widget.selectedColor
-                    : widget.unselectedColor,
-              ),
+              child: icon == Icons.notifications
+                  ? Consumer<NotificationsProvider>(
+                    builder: (context, value, child){
+                      return Badge(
+                      showBadge: value.notifsCount != 0,
+                      badgeContent: Text(value.notifsCount.toString(), style: TextStyle(color: Colors.white)),
+                      child: Icon(
+                        icon,
+                        size: widget.sizeIcon,
+                        color: _selectedIndex == index
+                            ? widget.selectedColor
+                            : widget.unselectedColor,
+                      ),
+                    );
+                    }
+                  )
+                  : Icon(
+                      icon,
+                      size: widget.sizeIcon,
+                      color: _selectedIndex == index
+                          ? widget.selectedColor
+                          : widget.unselectedColor,
+                    ),
             ),
             Visibility(
               visible: widget.showLabel,
